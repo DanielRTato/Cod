@@ -1,6 +1,11 @@
 import java.util.Scanner;
 
 public class View {
+
+    public static void mostrarCoche(Coche aux) {
+        System.out.println("Modelo: " + aux.modelo + "matricula: " + aux.matricula);
+    }
+
     public static void menu() {
         Scanner teclado = new Scanner(System.in);
         int opcion;
@@ -26,7 +31,10 @@ public class View {
                     String modelo = teclado.nextLine();
                     System.out.println("Introduce la matrícula:");
                     String matricula = teclado.nextLine();
-                    Controller.crearCocheC(modelo, matricula);
+                    Coche aux1 = Controller.crearCocheC(modelo, matricula);
+                    View.mostrarCoche(aux1);
+                    if (aux1!= null) mostrarCoche(aux1);
+                    else System.out.println("Parametros no validos");
                     break;
 
                 case 2:

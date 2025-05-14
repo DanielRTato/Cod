@@ -7,7 +7,7 @@ public class Controller {
 
     public static void mostrarCochesC() {
         for (Coche coche : Model.parking) {
-            System.out.println("Modelo: " + coche.modelo + ", Matrícula: " + coche.matricula + ", Velocidad: " + coche.velocidad + " km/h");
+            View.mostrarCoche(coche);
         }
     }
 
