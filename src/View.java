@@ -9,6 +9,7 @@ public class View {
     public static void menu() {
         Scanner teclado = new Scanner(System.in);
         int opcion;
+
         do {
             System.out.println("Elige una opción:");
             System.out.println("0. Mostrar coches");
@@ -70,6 +71,12 @@ public class View {
         } while (opcion != 4);
     }
 
+    /**
+     * Muestra la velocidad de un coche
+     * @param matricula
+     * @param v
+     * @return true si la velocidad se muestra correctamente
+     */
     public static boolean muestraVelocidad(String matricula, Integer v) {
         System.out.println(matricula + ": " + v + " km/h");
         return true;
