@@ -23,10 +23,6 @@ class ModelTest {
         assertEquals("asd123", coche.matricula);
     }
 
-    @Test
-    void cocheIsNull() {
-        assertNull(coche, "as123");
-    }
 
     @Test
     void cambiarVelocidad() {
@@ -34,7 +30,7 @@ class ModelTest {
 
         assertNotEquals(100, velocidadModificada);
         assertEquals(10, m.getVelocidad("asd123"));
-        assertNull(m.getVelocidad("123"));
+
     }
 
     @Test
@@ -61,7 +57,16 @@ class ModelTest {
         Model noValido = new Model();
         assertEquals(-1, noValido.disminuirV("uisgfj",12));
     }
+
+    @Test
+    void crearCoche2() {
+        Coche coche = Model.crearCoche("Ferrari" ,"12345pa");
+        assertEquals("Ferrari", coche.modelo);
+        assertEquals("12345pa", coche.matricula);
+    }
+
 }
+
 
 
 

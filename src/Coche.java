@@ -8,4 +8,13 @@ public class Coche {
         this.matricula = matricula;
         this.velocidad = 0;
     }
+
+    @Override
+    public String toString() {
+        return "Coche{" +
+                "matricula='" + matricula + '\'' +
+                ", modelo='" + modelo + '\'' +
+                ", velocidad=" + velocidad +
+                '}';
+    }
 }

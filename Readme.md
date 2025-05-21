@@ -5,7 +5,7 @@ Aplicación que trabaja con objetos coches, modifica la velocidad y la muestra
 ---
 ## Diagrama de clases:
 
-```mermaid
+```mermaid 
 classDiagram
     class Coche {
         String: matricula
@@ -68,4 +68,24 @@ sequenceDiagram
     View->>-View: System.out.println()
     View-->>Controller: boolean
     deactivate View
+    
+    
 ```
+
+```mermaid
+
+sequenceDiagram
+    participant Usuario
+    participant View
+    participant Controller
+    participant Model
+
+    Usuario->>View: Selecciona "Mostrar coches"
+    View->>Controller: mostrarCochesC()
+    Controller->>Model: Itera sobre parking
+    loop Por cada coche
+        Model-->>Controller: Devuelve coche
+        Controller->>View: Imprime información del coche
+    end
+    View-->>Usuario: Muestra la lista de coches
+````

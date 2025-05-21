@@ -1,62 +1,66 @@
 import java.util.ArrayList;
 
-/**
- * Clase encargada de manejar los datos
- */
 public class Model {
     static ArrayList<Coche> parking = new ArrayList<>();
 
     /**
-     * Crea un coche y lo mete en el parking
-     * @param modelo del coche
-     * @param matricula identificador unico
-     * @return el coche creado
+     * Crea un nuevo coche en el parking
+     * @param modelo
+     * @param matricula
+     * @return el Coche
      */
-    public Coche crearCoche(String modelo, String matricula){
+    public static Coche crearCoche(String modelo, String matricula) {
         Coche aux = new Coche(modelo, matricula);
         parking.add(aux);
         return aux;
     }
 
     /**
-     * Busca coche segun matricula
-     * @param matricula a buscar
-     * @return chche o null si no existe
+     * Obtiene un coche de la lista de coches del parking
+     * @param matricula
+     * @return el Coche o null si no existe
      */
-    public Coche getCoche(String matricula){
-        Coche aux = null;
-        // recorre el array buscando por matricula
-        for (Coche e: parking) {
+    public static Coche getCoche(String matricula) {
+        for (Coche e : parking) {
             if (e.matricula.equals(matricula)) {
-                aux = e;
+                return e;
             }
         }
-        return aux;
+        return null;
     }
 
     /**
      * Cambia la velocidad de un coche
      * @param matricula
-     * @param v nueva velocidad
-     * @return velocidad modificada
+     * @param v
+     * @return la nueva velocidad del coche o -1 si no existe
      */
-    public int cambiarVelocidad(String matricula, Integer v) {
-        // busca el coche
-        getCoche(matricula).velocidad = v;
-        // retorna la nueva velocidad
-        return getCoche(matricula).velocidad;
+    public static int cambiarVelocidad(String matricula, int v) {
+        Coche coche = getCoche(matricula);
+        if (coche != null) {
+            coche.velocidad = v;
+            return coche.velocidad;
+        }
+        return -1;
     }
 
     /**
-     * Devuelve la velocidad segun la matricula
+     * Obtiene la velocidad de un coche
      * @param matricula
-     * @return
+     * @return la velocidad del coche o -1 si no existe
      */
-    public int getVelocidad(String matricula) {
-        return getCoche(matricula).velocidad;
+    public static int getVelocidad(String matricula) {
+        Coche coche = getCoche(matricula);
+        return coche != null ? coche.velocidad : -1;
     }
 
-    public int aumentarV(String matricula, Integer v) {
+    /**
+     * Aumenta la velocidad de un coche
+     * @param matricula
+     * @param v
+     * @return la nueva velocidad del coche o -1 si no existe
+     */
+    public static int aumentarV(String matricula, Integer v) {
         Coche coche = getCoche(matricula);
         if (coche != null) {
             coche.velocidad += v;
@@ -65,7 +69,13 @@ public class Model {
         return -1;
     }
 
-    public int disminuirV(String matricula, Integer v) {
+    /**
+     * Disminuye la velocidad de un coche
+     * @param matricula
+     * @param v
+     * @return la nueva velocidad del coche o -1 si no existe
+     */
+    public static int disminuirV(String matricula, Integer v) {
         Coche coche = getCoche(matricula);
         if (coche != null) {
             coche.velocidad -= v;
@@ -73,5 +83,4 @@ public class Model {
         }
         return -1;
     }
-
 }
