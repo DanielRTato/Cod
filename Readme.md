@@ -73,6 +73,7 @@ sequenceDiagram
 ```
 
 ```mermaid
+
 sequenceDiagram
     participant Usuario
     participant View
@@ -87,4 +88,4 @@ sequenceDiagram
         Controller->>View: Imprime información del coche
     end
     View-->>Usuario: Muestra la lista de coches
-
+````
