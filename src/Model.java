@@ -113,4 +113,13 @@ public class Model {
         return resultado;
     }
 
+    public static boolean actualizarModelo(String matricula, String nuevoModelo) {
+        Coche coche = getCoche(matricula);
+        if (coche != null) {
+            coche.modelo = nuevoModelo;
+            return true;
+        }
+        return false;
+    }
+
 }

@@ -86,6 +86,10 @@ public class Controller {
         }
     }
 
+    public static boolean actualizarModeloC(String matricula, String nuevoModelo) {
+        return Model.actualizarModelo(matricula, nuevoModelo);
+    }
+
 }
 
 

@@ -91,6 +91,10 @@ public class View {
                     Controller.listarCochesPorVelocidadC(velocidadMinima);
                     break;
 
+                case 8:
+                    View.actualizarModelo();
+                    break;
+
                 default:
                     System.out.println("Opción no válida.");
             }
@@ -106,5 +110,19 @@ public class View {
     public static boolean muestraVelocidad(String matricula, Integer v) {
         System.out.println(matricula + ": " + v + " km/h");
         return true;
+    }
+
+    public static void actualizarModelo() {
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("Introduce la matrícula del coche:");
+        String matricula = teclado.nextLine();
+        System.out.println("Introduce el nuevo modelo:");
+        String nuevoModelo = teclado.nextLine();
+
+        if (Controller.actualizarModeloC(matricula, nuevoModelo)) {
+            System.out.println("Modelo actualizado correctamente.");
+        } else {
+            System.out.println("Coche no encontrado.");
+        }
     }
 }
