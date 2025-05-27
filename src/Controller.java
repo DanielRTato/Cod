@@ -4,7 +4,7 @@ public class Controller {
     /**
      * Crea un nuevo coche en el parking
      * @param modelo
-     * @param matricula
+     * @param matricula identificador unico del coche
      * @return el Coche
      */
     public static Coche crearCocheC(String modelo, String matricula) {
