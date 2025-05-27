@@ -1,4 +1,5 @@
 import java.lang.module.ModuleDescriptor;
+import java.util.ArrayList;
 
 public class Controller {
     /**
@@ -47,6 +48,44 @@ public class Controller {
     public static int mostrarVelocidadC(String matricula) {
         return Model.getVelocidad(matricula);
     }
+
+    /**
+     * Elimina un coche del parking
+     * @param matricula
+     * @return true si se eliminó, false si no se encontró
+     */
+    public static boolean eliminarCocheC(String matricula) {
+        return Model.eliminarCoche(matricula);
+    }
+
+    /**
+     * Busca un coche por matrícula y lo muestra
+     * @param matricula
+     */
+    public static void buscarCocheC(String matricula) {
+        Coche coche = Model.getCoche(matricula);
+        if (coche != null) {
+            View.mostrarCoche(coche);
+        } else {
+            System.out.println("Coche no encontrado.");
+        }
+    }
+
+    /**
+     * Lista los coches con velocidad superior a un valor dado
+     * @param velocidadMinima
+     */
+    public static void listarCochesPorVelocidadC(int velocidadMinima) {
+        ArrayList<Coche> coches = Model.listarCochesPorVelocidad(velocidadMinima);
+        if (!coches.isEmpty()) {
+            for (Coche coche : coches) {
+                View.mostrarCoche(coche);
+            }
+        } else {
+            System.out.println("No hay coches con velocidad superior a " + velocidadMinima + " km/h.");
+        }
+    }
+
 }
 
 

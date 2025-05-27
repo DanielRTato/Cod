@@ -83,4 +83,34 @@ public class Model {
         }
         return -1;
     }
+
+    /**
+     * Elimina un coche del parking
+     * @param matricula
+     * @return true si se eliminó, false si no se encontró
+     */
+    public static boolean eliminarCoche(String matricula) {
+        Coche coche = getCoche(matricula);
+        if (coche != null) {
+            parking.remove(coche);
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Lista los coches con velocidad superior a un valor dado
+     * @param velocidadMinima
+     * @return lista de coches que cumplen la condición
+     */
+    public static ArrayList<Coche> listarCochesPorVelocidad(int velocidadMinima) {
+        ArrayList<Coche> resultado = new ArrayList<>();
+        for (Coche coche : parking) {
+            if (coche.velocidad > velocidadMinima) {
+                resultado.add(coche);
+            }
+        }
+        return resultado;
+    }
+
 }

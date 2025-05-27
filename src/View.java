@@ -17,6 +17,9 @@ public class View {
             System.out.println("2. Cambiar velocidad");
             System.out.println("3. Mostrar velocidad");
             System.out.println("4. Salir");
+            System.out.println("5. Eliminar coche");
+            System.out.println("6. Buscar coche por matrícula");
+            System.out.println("7. Listar coches con velocidad superior a un valor");
 
             opcion = teclado.nextInt();
             teclado.nextLine(); // Consumir el salto de línea
@@ -63,6 +66,29 @@ public class View {
 
                 case 4:
                     System.out.println("Saliendo...");
+                    break;
+
+                case 5:
+                    System.out.println("Introduce la matrícula del coche a eliminar:");
+                    matricula = teclado.nextLine();
+                    if (Controller.eliminarCocheC(matricula)) {
+                        System.out.println("Coche eliminado correctamente.");
+                    } else {
+                        System.out.println("Coche no encontrado.");
+                    }
+                    break;
+
+                case 6:
+                    System.out.println("Introduce la matrícula del coche a buscar:");
+                    matricula = teclado.nextLine();
+                    Controller.buscarCocheC(matricula);
+                    break;
+
+                case 7:
+                    System.out.println("Introduce la velocidad mínima:");
+                    int velocidadMinima = teclado.nextInt();
+                    teclado.nextLine(); // Consumir el salto de línea
+                    Controller.listarCochesPorVelocidadC(velocidadMinima);
                     break;
 
                 default:
