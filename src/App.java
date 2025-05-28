@@ -3,5 +3,6 @@ public class App {
         Controller.inicioC();
         View.menu();
 
+        // Comienzo el examen
     }
 }
