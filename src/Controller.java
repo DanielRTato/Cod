@@ -12,7 +12,6 @@ public class Controller {
     }
 
     // FUNCIONES DEL EXAMEN
-
     /**
      * Avanza un coche la distancia indicada por los metros introducidos
      * @param matricula
@@ -21,6 +20,18 @@ public class Controller {
     public static void avanzarC(String matricula, int metros) {
         Model.avanzarC(matricula, metros);
     }
+
+    /**
+     * Repostar gasolina a un coche
+     * @param matricula identificador unico del coche
+     * @param litros cantidad a repostar
+     * @return la cantidad actual del deposito del coche
+     */
+    public static int ponerGasolinaC(String matricula, int litros) {
+        return Model.ponerGasolinaM(matricula, litros);
+    }
+    // FIN DE LAS FUNCIONES DEL EXAMEN
+
 
 
     /**

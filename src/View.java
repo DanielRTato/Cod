@@ -18,6 +18,7 @@ public class View {
             System.out.println("3. Mostrar velocidad");
             System.out.println("4. Salir");
             System.out.println("5. Avanzar coche");
+            System.out.println("6. Poner gasolina");
 
             opcion = teclado.nextInt();
             teclado.nextLine(); // Consumir el salto de línea
@@ -72,6 +73,19 @@ public class View {
                     System.out.println("Introduce la distancia a avanzar (en metros):");
                     int metros = teclado.nextInt();
                     Controller.avanzarC(matricula, metros);
+                    break;
+
+                case 6:
+                    System.out.println("Introduce la matrícula del coche:");
+                    matricula = teclado.nextLine();
+                    System.out.println("Introduce la cantidad de gasolina a poner (en litros):");
+                    int litros = teclado.nextInt();
+                    int depositoActual = Controller.ponerGasolinaC(matricula, litros);
+                    if (depositoActual != -1) {
+                        System.out.println("Gasolina puesta correctamente. Depósito actual: " + depositoActual + " litros.");
+                    } else {
+                        System.out.println("Coche no encontrado.");
+                    }
                     break;
 
                 default:

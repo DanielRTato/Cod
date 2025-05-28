@@ -1,3 +1,5 @@
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.ArrayList;
 
 public class Model {
@@ -30,10 +32,21 @@ public class Model {
         } else {
             System.out.println("Coche no encontrado.");
         }
-
-
     }
+    /**
+     * Repoene la gasolina de un coche
+     * @param matricula identificador unico del coche
+     * @param litros cantidad a repostar
+     * @return la cantidad actual del deposito del coche
+     */
+    public static int ponerGasolinaM (String matricula, int litros) {
+        Coche coche = getCoche(matricula);
 
+        coche.deposito += litros;
+
+        return coche.deposito;
+    }
+    // FIN DE LAS FUNCIONALIDADES DEL EXAMEN
 
 
     /**
