@@ -9,6 +9,7 @@ Ahora, viéndolo ya implementado, cambiaría para que no fuera `void` y devolvie
 
 En cambio, la función de `ponerGasolina()` sí que la he implementado como en el pseudocódigo, ya que no hay que comprobar nada más que la cantidad de gasolina sea positiva.
 A parte de la View claro, que ya no recordama como estaba.
+
 FIN DEL EXAMEN
 ----------
 
