@@ -1,9 +1,12 @@
 # EXAMEN
 Al implementar la funcion del model de avanzar() me di cuenta de que en el pseudo codigo no meti ninguna forma para saber de que coche quieres hacer avanzar.
 Tambien en el pseudo codigo solo compruebo que la cantidad que quiero avanzar sea positiva pero en el codigo compuebo que el coche exista.
+Ahora viendolo ya implementado cambiaria para que no fuera void y devolviera un booleano para saber si se ha podido avanzar o no.
 
+En cambio la funcion de ponerGasolina() si que la he implementado como en el pseudo codigo, ya que no hay que comprobar nada mas que la cantidad de gasolina sea positiva.
 
-
+FIN DEL EXAMEN
+----------
 
 # Arquitectura MVC
 
