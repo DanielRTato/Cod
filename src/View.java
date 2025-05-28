@@ -34,7 +34,7 @@ public class View {
                     String modelo = teclado.nextLine();
                     System.out.println("Introduce la matrícula:");
                     String matricula = teclado.nextLine();
-                    Coche aux1 = Controller.crearCocheC(modelo, matricula, 0, 50);
+                    Coche aux1 = Controller.crearCocheC(modelo, matricula, 0, 0);
                     View.mostrarCoche(aux1);
                     if (aux1!= null) mostrarCoche(aux1);
                     else System.out.println("Parametros no validos");

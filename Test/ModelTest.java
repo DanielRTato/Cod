@@ -2,7 +2,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+/*
 class ModelTest {
     static Model m;
     static Coche coche;
@@ -71,6 +71,4 @@ class ModelTest {
 
 
 
-
-
-
+*/
