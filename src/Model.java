@@ -27,7 +27,7 @@ public class Model {
         Coche coche = getCoche(matricula);
         if (coche != null && metros > 0) {
             coche.distanciaActual += metros;
-            coche.deposito = coche.deposito - (metros / 4 );  // Aqui simulo que el coche tiene un consumo de 1litro por cada 4 metros
+            coche.deposito = coche.deposito - (coche.velocidad * metros) / 100;  // Aqui simulo que a mayor velocidad mayor consumo tiene
             System.out.println("El coche " + matricula + " ha avanzado " + metros + " metros.");
         } else {
             System.out.println("Coche no encontrado.");
@@ -47,7 +47,6 @@ public class Model {
         return coche.deposito;
     }
     // FIN DE LAS FUNCIONALIDADES DEL EXAMEN
-
 
     /**
      * Obtiene un coche de la lista de coches del parking
