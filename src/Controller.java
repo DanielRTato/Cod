@@ -7,9 +7,21 @@ public class Controller {
      * @param matricula
      * @return el Coche
      */
-    public static Coche crearCocheC(String modelo, String matricula) {
-        return Model.crearCoche(modelo, matricula);
+    public static Coche crearCocheC(String modelo, String matricula, int distanciaActual, int deposito) {
+        return Model.crearCoche(modelo, matricula, distanciaActual, deposito);
     }
+
+    // FUNCIONES DEL EXAMEN
+
+    /**
+     * Avanza un coche la distancia indicada por los metros introducidos
+     * @param matricula
+     * @param metros
+     */
+    public static void avanzarC(String matricula, int metros) {
+        Model.avanzarC(matricula, metros);
+    }
+
 
     /**
      * Muestra todos los coches del parking
@@ -23,10 +35,10 @@ public class Controller {
     /**
      * Crea unos coches al iniciarse el programa
      */
-    public static void inicioC() {
-        Model.crearCoche("asd", "123po");
-        Model.crearCoche("qwe", "098z");
-        Model.crearCoche("zxc", "456x");
+    public void inicioC() {
+        Model.crearCoche("asd", "123po", 0, 50);
+        Model.crearCoche("qwe", "098z", 100, 60);
+        Model.crearCoche("zxc", "456x", 200, 70);
     }
 
     /**

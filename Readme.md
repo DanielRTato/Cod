@@ -1,3 +1,10 @@
+# EXAMEN
+Al implementar la funcion del model de avanzar() me di cuenta de que en el pseudo codigo no meti ninguna forma para saber de que coche quieres hacer avanzar.
+Tambien en el pseudo codigo solo compruebo que la cantidad que quiero avanzar sea positiva pero en el codigo compuebo que el coche exista.
+
+
+
+
 # Arquitectura MVC
 
 Aplicación que trabaja con objetos coches, modifica la velocidad y la muestra

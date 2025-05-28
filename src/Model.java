@@ -9,11 +9,32 @@ public class Model {
      * @param matricula
      * @return el Coche
      */
-    public static Coche crearCoche(String modelo, String matricula) {
-        Coche aux = new Coche(modelo, matricula);
+    public static Coche crearCoche(String modelo, String matricula, int distanciaActual, int deposito) {
+        Coche aux = new Coche(modelo, matricula, distanciaActual, deposito);
         parking.add(aux);
         return aux;
     }
+
+    //FUNCIONALIDADES DEL EXAMEN
+    /**
+     * Avanza un coche la distancia indicada por los metros introducidos
+     * @param matricula
+     * @param metros
+     */
+    public static void avanzarC(String matricula, int metros) {
+        Coche coche = getCoche(matricula);
+        if (coche != null && metros > 0) {
+            coche.distanciaActual += metros;
+            coche.deposito = coche.deposito - (metros / 4 );  // Aqui simulo que el coche tiene un consumo de 1litro por cada 4 metros
+            System.out.println("El coche " + matricula + " ha avanzado " + metros + " metros.");
+        } else {
+            System.out.println("Coche no encontrado.");
+        }
+
+
+    }
+
+
 
     /**
      * Obtiene un coche de la lista de coches del parking

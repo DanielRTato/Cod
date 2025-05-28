@@ -17,6 +17,7 @@ public class View {
             System.out.println("2. Cambiar velocidad");
             System.out.println("3. Mostrar velocidad");
             System.out.println("4. Salir");
+            System.out.println("5. Avanzar coche");
 
             opcion = teclado.nextInt();
             teclado.nextLine(); // Consumir el salto de línea
@@ -32,7 +33,7 @@ public class View {
                     String modelo = teclado.nextLine();
                     System.out.println("Introduce la matrícula:");
                     String matricula = teclado.nextLine();
-                    Coche aux1 = Controller.crearCocheC(modelo, matricula);
+                    Coche aux1 = Controller.crearCocheC(modelo, matricula, 0, 50);
                     View.mostrarCoche(aux1);
                     if (aux1!= null) mostrarCoche(aux1);
                     else System.out.println("Parametros no validos");
@@ -63,6 +64,14 @@ public class View {
 
                 case 4:
                     System.out.println("Saliendo...");
+                    break;
+
+                case 5:
+                    System.out.println("Introduce la matrícula del coche:");
+                    matricula = teclado.nextLine();
+                    System.out.println("Introduce la distancia a avanzar (en metros):");
+                    int metros = teclado.nextInt();
+                    Controller.avanzarC(matricula, metros);
                     break;
 
                 default:
