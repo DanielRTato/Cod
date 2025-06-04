@@ -1,4 +1,28 @@
-# EXAMEN
+# EXAMEN OBSERVER DEL 04/06/2025
+### Sistema de Alerta de Combustible Bajo
+1. **ObserverDeposito**: Clase observadora que verifica el nivel de combustible
+    - Se activa cuando el depósito baja de 10 litros
+    - Muestra un mensaje de alerta mediante la View
+2. **Puntos de Activación**:
+    - Cuando el coche avanza (consumo de gasolina) `avanzarM()`
+    - Cuando se reposta gasolina  `ponerGasolinaM()`
+
+## Cómo Probar la Funcionalidad
+
+1. Crear un coche con poco combustible:
+   Al crear un coche y repuesta menos de 10 litros para que salte la alerta.
+2. Avanzar el coche:
+   Tambien al crear un coche y ponerle 11 litros y darle una velocidad de 10
+   al avanzar 20 perdera dos litros y se activará la alerta.
+
+
+FIN DEL EXAMEN OBSERVER
+--------------------------
+
+
+
+
+# EXAMEN DEL 28-05-2025
 
 Al implementar la función del modelo `avanzar()`, me di cuenta de que en el pseudocódigo no incluí ninguna forma de saber qué coche quieres hacer avanzar.  
 También, en el pseudocódigo solo compruebo que la cantidad que quiero avanzar sea positiva, pero en el código tambien compruebo que el coche exista .  

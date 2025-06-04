@@ -33,7 +33,7 @@ public class Model {
      * @param matricula
      * @param metros
      */
-    public static void avanzarC(String matricula, int metros) {
+    public static void avanzarM(String matricula, int metros) {
         Coche coche = getCoche(matricula);
         if (coche != null && metros > 0) {
             coche.distanciaActual += metros;

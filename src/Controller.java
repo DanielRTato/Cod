@@ -18,7 +18,7 @@ public class Controller {
      * @param metros
      */
     public static void avanzarC(String matricula, int metros) {
-        Model.avanzarC(matricula, metros);
+        Model.avanzarM(matricula, metros);
     }
 
     /**
