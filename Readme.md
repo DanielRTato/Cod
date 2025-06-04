@@ -15,6 +15,29 @@
    Tambien al crear un coche y ponerle 11 litros y darle una velocidad de 10
    al avanzar 20 perdera dos litros y se activará la alerta.
 
+## Diagrma de secuencia del observer
+
+````mermaid
+sequenceDiagram
+    participant View
+    participant Controller
+    participant ObserverDeposito
+    participant Model
+    %% Proceso de repostar
+    Controller->>+Model: ponerGasolinaC()
+    Model->>+ObserverDeposito: update()
+    deactivate ObserverDeposito
+    deactivate Model
+    ObserverDeposito->>View: alertaRepostar()
+   
+
+%% Proceso de avanzar
+    Controller->>+Model: avanzarC()
+    Model->>+ObserverDeposito: update()
+    deactivate Model
+    deactivate ObserverDeposito
+    ObserverDeposito->>View: alertaRepostar()
+``````
 
 FIN DEL EXAMEN OBSERVER
 --------------------------

@@ -24,7 +24,6 @@ public class Model {
      * @param coche el coche que ha cambiado su depósito
      */
     public static void notifyObserversDeposito(Coche coche) {
-        System.out.println("Notificando observadores del depósito. Depósito actual: " + coche.deposito); // Notificación de cambio de depósito para comprobar que funciona
         DepositoObserver.update(coche);
     }
 
