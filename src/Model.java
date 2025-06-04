@@ -18,6 +18,16 @@ public class Model {
     }
 
     //FUNCIONALIDADES DEL EXAMEN
+
+    /**
+     * Notifica a los observadores del cambio de depósito de un coche
+     * @param coche el coche que ha cambiado su depósito
+     */
+    public static void notifyObserversDeposito(Coche coche) {
+        System.out.println("Notificando observadores del depósito. Depósito actual: " + coche.deposito); // Notificación de cambio de depósito para comprobar que funciona
+        DepositoObserver.update(coche);
+    }
+
     /**
      * Avanza un coche la distancia indicada por los metros introducidos
      * @param matricula
@@ -29,6 +39,7 @@ public class Model {
             coche.distanciaActual += metros;
             coche.deposito = coche.deposito - (coche.velocidad * metros) / 100;  // Aqui simulo que a mayor velocidad mayor consumo tiene
             System.out.println("El coche " + matricula + " ha avanzado " + metros + " metros.");
+            notifyObserversDeposito(coche);
         } else {
             System.out.println("Coche no encontrado.");
         }
@@ -43,7 +54,7 @@ public class Model {
         Coche coche = getCoche(matricula);
 
         coche.deposito += litros;
-
+        notifyObserversDeposito(coche);
         return coche.deposito;
     }
     // FIN DE LAS FUNCIONALIDADES DEL EXAMEN

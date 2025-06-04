@@ -104,4 +104,15 @@ public class View {
         System.out.println(matricula + ": " + v + " km/h");
         return true;
     }
+
+    /**
+     * Muestra una alarma de nivel bajo de gasolina
+     * @param matricula para identificar el coche
+     * @param nivelActual el nivel actual de gasolina
+     * @return true si se muestra correctamente
+     */
+    public static boolean alertaRepostar(String matricula, Integer nivelActual) {
+        System.out.println("Alerta:Repostar");
+        return true;
+    }
 }
