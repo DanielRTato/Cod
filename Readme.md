@@ -38,7 +38,13 @@ sequenceDiagram
     deactivate ObserverDeposito
     ObserverDeposito->>View: alertaRepostar()
 ``````
-
+## CAPTURAS DE VERIFICACIÓN
+Primera captura donde se muestra que el coche al azanzar pierde gasolina y al bajar de 10litros salta la alerta el aviso.
+![Comprobacion2.png](Comprobacion2.png)
+---
+Segunda captura donde se muestra que al repostar una cantidad inferior a 10 litros tambien salta el aviso.
+![verificion 1.png](verificion%201.png)
+----------------------------
 FIN DEL EXAMEN OBSERVER
 --------------------------
 
