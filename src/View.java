@@ -112,7 +112,7 @@ public class View {
      * @return true si se muestra correctamente
      */
     public static boolean alertaRepostar(String matricula, Integer nivelActual) {
-        System.out.println("Alerta:Repostar");
+        System.out.println("!Alerta: Repostar!");
         return true;
     }
 }

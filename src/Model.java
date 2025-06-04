@@ -29,8 +29,8 @@ public class Model {
 
     /**
      * Avanza un coche la distancia indicada por los metros introducidos
-     * @param matricula
-     * @param metros
+     * @param matricula identificador unico de cada coche
+     * @param metros distancia que avanza el coche
      */
     public static void avanzarM(String matricula, int metros) {
         Coche coche = getCoche(matricula);
@@ -38,7 +38,7 @@ public class Model {
             coche.distanciaActual += metros;
             coche.deposito = coche.deposito - (coche.velocidad * metros) / 100;  // Aqui simulo que a mayor velocidad mayor consumo tiene
             System.out.println("El coche " + matricula + " ha avanzado " + metros + " metros.");
-            notifyObserversDeposito(coche);
+            notifyObserversDeposito(coche); // Avisa al observer del cambio en el depósito
         } else {
             System.out.println("Coche no encontrado.");
         }
@@ -53,7 +53,7 @@ public class Model {
         Coche coche = getCoche(matricula);
 
         coche.deposito += litros;
-        notifyObserversDeposito(coche);
+        notifyObserversDeposito(coche); // Avisa al observer del cambio en el depósito
         return coche.deposito;
     }
     // FIN DE LAS FUNCIONALIDADES DEL EXAMEN
